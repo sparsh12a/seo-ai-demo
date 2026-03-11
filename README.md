@@ -22,34 +22,20 @@ Generate fully researched, SEO-optimized articles from a single keyword. The pip
 
 ```bash
 git clone <repo-url>
-cd seo-ai
+cd seo-ai-demo
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Configure API keys
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env` and fill in your keys:
-
-```
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
-SERPAPI_KEY=your_serpapi_key_here
-DB_PATH=seo_jobs.db
-```
-
-### 3. Start the backend
+### 2. Start the backend
 
 ```bash
 uvicorn api:app --reload
 # Runs on http://localhost:8000
 ```
 
-### 4. Start the frontend
+### 3. Start the frontend
 
 ```bash
 cd frontend
@@ -58,13 +44,17 @@ npm run dev
 # Runs on http://localhost:3000
 ```
 
-### 5. Add your API keys (first time)
+> **Important:** Always run `npm install` and `npm run dev` from inside the `frontend` directory, not from the project root.
 
-On first login, you'll be redirected to the **API Keys** page (`/settings`). Enter your:
+### 4. Add your API keys (first time)
+
+On first visit, you'll be redirected to the **API Keys** page (`/settings`). Enter your:
 - **Anthropic API key** — from [console.anthropic.com](https://console.anthropic.com)
 - **SerpAPI key** — from [serpapi.com](https://serpapi.com)
 
 Keys are stored in secure httpOnly cookies and expire after 1 hour. You'll be asked to re-enter them after each session. They are never stored on the server or in the database.
+
+> No `.env` file is needed. API keys are entered through the UI, not environment variables.
 
 ---
 
