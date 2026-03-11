@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f0f0f;
+  --brand: #7c6efc;
+  --brand-light: #a594fd;
+  --brand-dark: #5b4de8;
+}
+
+.dark {
+  --background: #0d0d12;
+  --foreground: #f0f0f5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--brand);
+  --color-brand-light: var(--brand-light);
+  --color-brand-dark: var(--brand-dark);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.gradient-btn {
+  background: linear-gradient(135deg, #3b82f6, #7c6efc);
+  transition: opacity 0.2s, transform 0.15s;
+}
+.gradient-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+.gradient-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.prose-article h1 { font-size: 1.875rem; font-weight: 700; margin: 1.5rem 0 0.75rem; }
+.prose-article h2 { font-size: 1.5rem;   font-weight: 600; margin: 1.25rem 0 0.5rem; }
+.prose-article h3 { font-size: 1.25rem;  font-weight: 600; margin: 1rem 0 0.5rem; }
+.prose-article p  { line-height: 1.75; margin-bottom: 1rem; color: #374151; }
+.dark .prose-article p { color: #d1d5db; }
+.prose-article ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+.prose-article li { margin-bottom: 0.25rem; }
+
+.prose-article table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.875rem; }
+.prose-article thead { background: #f8f7ff; }
+.dark .prose-article thead { background: #1e1b4b22; }
+.prose-article th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; color: #7c6efc; border-bottom: 2px solid #7c6efc33; white-space: nowrap; }
+.prose-article td { padding: 0.65rem 1rem; border-bottom: 1px solid #e2e8f0; color: #374151; vertical-align: top; }
+.dark .prose-article td { border-bottom-color: #1e293b; color: #d1d5db; }
+.prose-article tr:last-child td { border-bottom: none; }
+.prose-article tr:hover td { background: #f8f7ff44; }
+.dark .prose-article tr:hover td { background: #7c6efc0a; }
