@@ -46,9 +46,16 @@ npm run dev
 
 > **Important:** Always run `npm install` and `npm run dev` from inside the `frontend` directory, not from the project root.
 
-### 4. Add your API keys (first time)
+### 4. Log in
 
-On first visit, you'll be redirected to the **API Keys** page (`/settings`). Enter your:
+Open http://localhost:3000 and sign in with:
+
+- **Username:** `aiseo`
+- **Password:** `aiseo`
+
+### 5. Add your API keys (first time)
+
+After login, you'll be redirected to the **API Keys** page (`/settings`). Enter your:
 - **Anthropic API key** — from [console.anthropic.com](https://console.anthropic.com)
 - **SerpAPI key** — from [serpapi.com](https://serpapi.com)
 
